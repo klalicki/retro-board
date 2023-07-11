@@ -4,22 +4,19 @@ import { sampleData } from "../../sampleData";
 
 // components
 import CardList from "../CardList/CardList";
+import Card from "../Card/Card";
 function App() {
   console.log(sampleData);
   return (
     <div className="App">
       <ol>
-        {sampleData.map((item) => {
+        {sampleData.map((list) => {
           return (
-            <CardList listName={item.listName}></CardList>
-            // <li key={item.listName}>
-            //   {item.listName}
-            //   <ul>
-            //     {item.listContents.map((listItem) => {
-            //       return <li key={listItem.itemText}>{listItem.itemText}</li>;
-            //     })}
-            //   </ul>
-            // </li>
+            <CardList listName={list.listName}>
+              {list.listContents.map((listItem) => {
+                return <Card cardText={listItem.itemText}></Card>;
+              })}
+            </CardList>
           );
         })}
       </ol>
