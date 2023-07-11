@@ -1,7 +1,7 @@
 {
   "name": "retro-board",
   "version": "0.1.0",
-  "homepage": "kristoff.dev/retro-board",
+  "homepage": "https://kristoff.dev/retro-board",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
