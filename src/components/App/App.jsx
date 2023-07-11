@@ -1,5 +1,5 @@
 // import logo from "./../../logo.svg";
-// import "./App.css";
+import "./App.css";
 import { sampleData } from "../../sampleData";
 
 // components
@@ -9,7 +9,7 @@ function App() {
   console.log(sampleData);
   return (
     <div className="App">
-      <ol>
+      <div className="card-list-container">
         {sampleData.map((list) => {
           return (
             <CardList listName={list.listName}>
@@ -19,8 +19,7 @@ function App() {
             </CardList>
           );
         })}
-      </ol>
-      <header className="App-header"></header>
+      </div>
     </div>
   );
 }
