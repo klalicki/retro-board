@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .card-list {
   display: flex;
   flex-direction: column;
@@ -15,4 +18,10 @@
 
 .card {
   background-color: lightgray;
+}
+.icon-bar {
+  display: flex;
+  width: 100%;
+  padding: 0.5rem;
+  justify-content: space-between;
 }
