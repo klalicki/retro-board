@@ -12,6 +12,7 @@ moveItem(direction)
 
 */
   const addItem = (text, column) => {
+    // generate a unique ID for the item to make it easier to find
     const itemId = Date.now();
     const newItem = {
       itemId: itemId,
@@ -22,6 +23,9 @@ moveItem(direction)
     const newData = data;
     newData[column].push(newItem);
     setData(newData);
+  };
+  const updateItem = (id, newItem) => {
+    const newData = data;
   };
 
   return (
