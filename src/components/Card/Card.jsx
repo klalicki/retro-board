@@ -12,48 +12,49 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Card = ({ listIndex, cardText, children, cardIndex }) => {
+const Card = ({ listIndex, children, cardIndex }) => {
   const { data, removeItem, moveItem, setItemText } = useContext(DataContext);
   const [isEditing, setIsEditing] = useState(false);
   const cardData = data[listIndex].listContents[cardIndex];
   const [newText, setNewText] = useState(cardData.itemText);
   return (
     <div className="card">
-      <form className="card-header">
+      <form
+        className="card-header"
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (isEditing) {
+            setItemText(listIndex, cardIndex, newText);
+            setIsEditing(false);
+          } else {
+            setIsEditing(true);
+          }
+        }}
+      >
         {isEditing ? (
           <>
             <textarea
               autoFocus
               rows={1}
-              autosize="true"
-              onlyGrow="true"
+              cols={1}
               value={newText}
+              onFocus={(e) => {
+                e.target.style.height = e.target.scrollHeight + "px";
+              }}
               onChange={(e) => {
+                e.target.style.height = e.target.scrollHeight + "px";
                 setNewText(e.target.value);
               }}
             ></textarea>
 
-            <button
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                setItemText(listIndex, cardIndex, newText);
-                setIsEditing(false);
-              }}
-            >
+            <button type="submit">
               <FontAwesomeIcon icon={faCheck} />
             </button>
           </>
         ) : (
           <>
             <h2>{cardData.itemText}</h2>
-            <button
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsEditing(true);
-              }}
-            >
+            <button type="submit">
               <FontAwesomeIcon icon={faPen} />
             </button>
           </>
