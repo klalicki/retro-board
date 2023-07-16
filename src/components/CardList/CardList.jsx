@@ -11,7 +11,7 @@ const CardList = ({ listIndex }) => {
   return (
     <div className="card-list">
       <article className="card-list-header">
-        <h1>CardList {listIndex}:</h1>
+        <h1>{data[listIndex].listName}</h1>
         <button
           onClick={() => {
             addItem(listIndex);
