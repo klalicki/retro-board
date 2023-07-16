@@ -22,13 +22,16 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
       <form className="card-header">
         {isEditing ? (
           <>
-            <input
+            <textarea
               autoFocus
+              rows={1}
+              autosize="true"
+              onlyGrow="true"
               value={newText}
               onChange={(e) => {
                 setNewText(e.target.value);
               }}
-            ></input>
+            ></textarea>
 
             <button
               type="submit"
