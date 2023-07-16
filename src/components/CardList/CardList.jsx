@@ -7,7 +7,7 @@ import { DataContext } from "../../contexts/DataContext";
 const CardList = ({ listIndex }) => {
   const { data } = useContext(DataContext);
   const items = data[listIndex].listContents;
-  console.log(items);
+
   return (
     <div className="card-list">
       <article className="card-list-header">
