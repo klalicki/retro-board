@@ -13,9 +13,10 @@ moveItem(direction)
 */
 
   /**
-   * The `addItem` function adds a new item to a specific column in a data array.
+   * The `addItem` function adds a new card to the end of a specific column.
+   * @param columnIndex: the id of the column to add a card to
    */
-  const addItem = (columnId) => {
+  const addItem = (columnIndex) => {
     // generate a unique ID for the item to make it easier to find
     const itemId = Date.now();
     const newItem = {
@@ -25,32 +26,40 @@ moveItem(direction)
       itemDownvoteCount: 0,
     };
     const newData = [...data];
-    newData[columnId].listContents.push(newItem);
+    newData[columnIndex].listContents.push(newItem);
     setData(newData);
   };
 
   /**
-   * The `removeItem` function removes the specified item from the specified column.
+   * The `removeItem` function removes the specified card from the specified column.
+   * @param columnIndex: the column from which to remove a card
+   * @param itemIndex: the id of the card to remove
    */
-  const removeItem = (columnId, itemId) => {
+  const removeItem = (columnIndex, itemIndex) => {
     const newData = [...data];
-    newData[columnId].listContents.splice(itemId, 1);
+    newData[columnIndex].listContents.splice(itemIndex, 1);
     setData(newData);
   };
 
-  const moveItem = (columnId, itemId, targetColumnId) => {
-    let safeTargetColumnId = targetColumnId;
+  /**
+   * The `moveItem` function moves a card from one column to the end of another column. If targetcolumnIndex is out of bounds, the function will wrap the card over to the opposite edge
+   * @param columnIndex: the column that the card is currently in
+   * @param itemIndex: the current id of the item to move
+   * @param targetcolumnIndex: the id of the column to which the item should be moved
+   */
+  const moveItem = (columnIndex, itemIndex, targetcolumnIndex) => {
+    let safeTargetColumnIndex = targetcolumnIndex;
     // handle wrapping cards off the edges of the board
-    if (safeTargetColumnId < 0) {
-      safeTargetColumnId = data.length - 1;
+    if (safeTargetColumnIndex < 0) {
+      safeTargetColumnIndex = data.length - 1;
     }
-    if (safeTargetColumnId > data.length - 1) {
-      safeTargetColumnId = 0;
+    if (safeTargetColumnIndex > data.length - 1) {
+      safeTargetColumnIndex = 0;
     }
     const newData = [...data];
-    const itemToMove = newData[columnId].listContents[itemId];
-    newData[columnId].listContents.splice(itemId, 1);
-    newData[safeTargetColumnId].listContents.push(itemToMove);
+    const itemToMove = newData[columnIndex].listContents[itemIndex];
+    newData[columnIndex].listContents.splice(itemIndex, 1);
+    newData[safeTargetColumnIndex].listContents.push(itemToMove);
     setData(newData);
   };
 
