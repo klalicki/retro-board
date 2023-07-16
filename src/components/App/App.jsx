@@ -12,11 +12,11 @@ function App() {
       <div className="card-list-container">
         {sampleData.map((list, listIndex) => {
           return (
-            <CardList listName={list.listName} listIndex={listIndex}>
-              {list.listContents.map((listItem) => {
-                return <Card cardText={listItem.itemText}></Card>;
-              })}
-            </CardList>
+            <CardList
+              listName={list.listName}
+              listIndex={listIndex}
+              items={list.listContents}
+            />
           );
         })}
       </div>
