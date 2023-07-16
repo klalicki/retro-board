@@ -11,7 +11,11 @@ removeItem(item)
 moveItem(direction)
 
 */
-  const addItem = (column) => {
+
+  /**
+   * The `addItem` function adds a new item to a specific column in a data array.
+   */
+  const addItem = (columnId) => {
     // generate a unique ID for the item to make it easier to find
     const itemId = Date.now();
     const newItem = {
@@ -21,12 +25,20 @@ moveItem(direction)
       itemDownvoteCount: 0,
     };
     const newData = [...data];
-    newData[column].listContents.push(newItem);
+    newData[columnId].listContents.push(newItem);
     setData(newData);
   };
 
+  /**
+   * The `removeItem` function removes the specified item from the specified column.
+   */
+  const removeItem = (columnId, itemId) => {
+    const newData = [...data];
+    newData[columnId].listContents.splice(itemId, 1);
+    setData(newData);
+  };
   return (
-    <DataContext.Provider value={{ data, addItem }}>
+    <DataContext.Provider value={{ data, addItem, removeItem }}>
       {children}
     </DataContext.Provider>
   );
