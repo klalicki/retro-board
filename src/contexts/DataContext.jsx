@@ -5,12 +5,6 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [data, setData] = useState(sampleData);
-  /* list of functions to implement
-addItem(item)
-removeItem(item)
-moveItem(direction)
-
-*/
 
   /**
    * The `addItem` function adds a new card to the end of a specific column.
