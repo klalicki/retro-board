@@ -17,8 +17,14 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
       <h2>Card: {cardData.itemText}</h2>
       {children}
       <div className="icon-bar">
-        
-        <FontAwesomeIcon icon={faArrowLeft} />
+        <button
+          onClick={() => {
+            moveItem(listIndex, cardIndex, listIndex - 1);
+          }}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
+
         <button
           onClick={() => {
             removeItem(listIndex, cardIndex);
@@ -27,7 +33,15 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
           <FontAwesomeIcon icon={faXmark} />
         </button>
 
-        <FontAwesomeIcon icon={faArrowRight} />
+        <div className="icon-bar">
+          <button
+            onClick={() => {
+              moveItem(listIndex, cardIndex, listIndex + 1);
+            }}
+          >
+            <FontAwesomeIcon icon={faArrowRight} />
+          </button>
+        </div>
       </div>
     </div>
   );
