@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ listIndex, cardText, children, cardIndex }) => {
-  const { data, removeItem } = useContext(DataContext);
+  const { data, removeItem, moveItem } = useContext(DataContext);
   console.log(data);
   const cardData = data[listIndex].listContents[cardIndex];
   return (
@@ -17,6 +17,7 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
       <h2>Card: {cardData.itemText}</h2>
       {children}
       <div className="icon-bar">
+        
         <FontAwesomeIcon icon={faArrowLeft} />
         <button
           onClick={() => {

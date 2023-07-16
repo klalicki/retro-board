@@ -37,8 +37,17 @@ moveItem(direction)
     newData[columnId].listContents.splice(itemId, 1);
     setData(newData);
   };
+
+  const moveItem = (columnId, itemId, targetColumnId) => {
+    const newData = [...data];
+    const itemToMove = newData[columnId].listContents[itemId];
+    newData[columnId].listContents.splice(itemId, 1);
+    newData[targetColumnId].listContents.push(itemToMove);
+    setData(newData);
+  };
+
   return (
-    <DataContext.Provider value={{ data, addItem, removeItem }}>
+    <DataContext.Provider value={{ data, addItem, removeItem, moveItem }}>
       {children}
     </DataContext.Provider>
   );
