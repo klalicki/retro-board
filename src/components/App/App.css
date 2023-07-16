@@ -25,3 +25,7 @@
   padding: 0.5rem;
   justify-content: space-between;
 }
+
+.card-header {
+  display: flex;
+}

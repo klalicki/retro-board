@@ -22,13 +22,13 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
       <div className="card-header">
         {isEditing ? (
           <>
-            <input
-              type="text"
+            <textarea
               value={newText}
               onChange={(e) => {
                 setNewText(e.target.value);
               }}
-            />
+            ></textarea>
+     
             <button type="submit">
               <FontAwesomeIcon
                 icon={faCheck}
@@ -41,7 +41,7 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
           </>
         ) : (
           <>
-            <h2>Card: {cardData.itemText}</h2>
+            <h2>{cardData.itemText}</h2>
             <button
               onClick={() => {
                 setIsEditing(true);
