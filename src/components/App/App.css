@@ -9,6 +9,19 @@
   width: 400px;
 }
 
+button {
+  background-color: #555;
+  border-style: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: white;
+  transition: all 0.1s;
+}
+button:hover {
+  background-color: white;
+  color: black;
+  transition: all 0.1s;
+}
 .card-list-container {
   display: flex;
   justify-content: center;
@@ -22,21 +35,22 @@
   flex-direction: column;
 }
 .card {
-  background-color: lightgray;
+  background-color: #eee;
   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .icon-bar {
   display: flex;
   width: 100%;
-  padding: 0.5rem;
   justify-content: space-between;
 }
 
 .card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+  align-items: flex-start;
 }
 .card-header h2,
 .card-header textarea {
@@ -57,4 +71,8 @@
 .vote-bar {
   display: flex;
   justify-content: space-between;
+}
+.vote-bar button {
+  display: flex;
+  gap: 0.25rem;
 }

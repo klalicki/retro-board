@@ -15,7 +15,7 @@ export const DataProvider = ({ children }) => {
     const itemId = Date.now();
     const newItem = {
       itemId: itemId,
-      itemText: "text",
+      itemText: "",
       itemUpvoteCount: 0,
       itemDownvoteCount: 0,
     };

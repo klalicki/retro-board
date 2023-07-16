@@ -14,9 +14,10 @@ import {
 
 const Card = ({ listIndex, children, cardIndex }) => {
   const { data, removeItem, moveItem, setItemText } = useContext(DataContext);
-  const [isEditing, setIsEditing] = useState(false);
+
   const cardData = data[listIndex].listContents[cardIndex];
   const [newText, setNewText] = useState(cardData.itemText);
+  const [isEditing, setIsEditing] = useState(cardData.itemText === "");
   return (
     <div className="card">
       <form
@@ -37,6 +38,7 @@ const Card = ({ listIndex, children, cardIndex }) => {
               autoFocus
               rows={1}
               cols={1}
+              placeholder={"Type card text here"}
               value={newText}
               onKeyDown={(e) => {
                 // intercept plain Enter key and use it to submit
