@@ -9,10 +9,11 @@ import {
   faArrowLeft,
   faPen,
   faCheck,
+  faL,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ listIndex, cardText, children, cardIndex }) => {
-  const { data, removeItem, moveItem } = useContext(DataContext);
+  const { data, removeItem, moveItem, setItemText } = useContext(DataContext);
   const [isEditing, setIsEditing] = useState(false);
   const cardData = data[listIndex].listContents[cardIndex];
   const [newText, setNewText] = useState(cardData.itemText);
@@ -32,7 +33,8 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
               <FontAwesomeIcon
                 icon={faCheck}
                 onClick={() => {
-                  alert(newText);
+                  setItemText(listIndex, cardIndex, newText);
+                  setIsEditing(false);
                 }}
               />
             </button>

@@ -57,8 +57,16 @@ export const DataProvider = ({ children }) => {
     setData(newData);
   };
 
+  const setItemText = (columnIndex, itemIndex, newText) => {
+    const newData = [...data];
+    // console.log(newData);
+    newData[columnIndex].listContents[itemIndex].itemText = newText;
+    setData(newData);
+  };
   return (
-    <DataContext.Provider value={{ data, addItem, removeItem, moveItem }}>
+    <DataContext.Provider
+      value={{ data, addItem, removeItem, moveItem, setItemText }}
+    >
       {children}
     </DataContext.Provider>
   );
