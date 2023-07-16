@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="App">
       <div className="card-list-container">
-        {sampleData.map((list) => {
+        {sampleData.map((list, listIndex) => {
           return (
-            <CardList listName={list.listName}>
+            <CardList listName={list.listName} listIndex={listIndex}>
               {list.listContents.map((listItem) => {
                 return <Card cardText={listItem.itemText}></Card>;
               })}
