@@ -39,6 +39,7 @@ const Card = ({ listIndex, children, cardIndex }) => {
               cols={1}
               value={newText}
               onKeyDown={(e) => {
+                // intercept plain Enter key and use it to submit
                 const modifiers = e.shiftKey || e.altKey || e.ctrlKey;
                 if (e.key === "Enter" && !modifiers) {
                   e.preventDefault();
