@@ -15,7 +15,7 @@ function App() {
               <CardList
                 listName={list.listName}
                 listIndex={listIndex}
-                items={list.listContents}
+                // items={list.listContents}
               />
             );
           })}
