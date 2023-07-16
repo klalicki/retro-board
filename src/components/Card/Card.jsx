@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import { useState } from "react";
-import { useRef } from "react";
+import VoteBar from "../VoteBar/VoteBar";
 import {
   faArrowRight,
   faXmark,
@@ -58,6 +58,7 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
       </form>
 
       {children}
+      <VoteBar {...{ listIndex, cardIndex }} />
       <div className="icon-bar">
         <button
           onClick={() => {
