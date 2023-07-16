@@ -24,12 +24,9 @@ moveItem(direction)
     newData[column].push(newItem);
     setData(newData);
   };
-  const updateItem = (id, newItem) => {
-    const newData = data;
-  };
 
   return (
-    <DataContext.Provider value={(data, addItem)}>
+    <DataContext.Provider value={{ data, addItem }}>
       {children}
     </DataContext.Provider>
   );
