@@ -2,6 +2,7 @@ export const sampleData = [
   {
     listName: "Went Well",
     listId: 0,
+    listColor: "seagreen",
     listContents: [
       {
         itemText: "I coded my first React component",
@@ -14,6 +15,7 @@ export const sampleData = [
   {
     listName: "To Improve",
     listId: 1,
+    listColor: "tomato",
     listContents: [
       {
         itemText: "Life",
@@ -31,6 +33,7 @@ export const sampleData = [
   },
   {
     listName: "Action Items",
+    listColor: "purple",
     listId: 2,
     listContents: [
       {

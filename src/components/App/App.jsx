@@ -6,17 +6,11 @@ import { DataProvider } from "../../contexts/DataContext";
 import CardList from "../CardList/CardList";
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <DataProvider>
         <div className="card-list-container">
           {sampleData.map((list, listIndex) => {
-            return (
-              <CardList
-                listName={list.listName}
-                listIndex={listIndex}
-                // items={list.listContents}
-              />
-            );
+            return <CardList listName={list.listName} listIndex={listIndex} />;
           })}
         </div>
       </DataProvider>

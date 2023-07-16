@@ -9,9 +9,12 @@ const CardList = ({ listIndex }) => {
   const items = data[listIndex].listContents;
 
   return (
-    <div className="card-list">
+    <div
+      className="card-list"
+      style={{ "--accent-color": data[listIndex].listColor }}
+    >
       <article className="card-list-header">
-        <h1>CardList {listIndex}:</h1>
+        <h1>{data[listIndex].listName}</h1>
         <button
           onClick={() => {
             addItem(listIndex);
@@ -20,16 +23,17 @@ const CardList = ({ listIndex }) => {
           <FontAwesomeIcon icon={faPlus} />
         </button>
       </article>
-
-      {items.map((listItem, cardIndex) => {
-        return (
-          <Card
-            key={items[cardIndex].cardId}
-            listIndex={listIndex}
-            cardIndex={cardIndex}
-          ></Card>
-        );
-      })}
+      <section className="card-list-body">
+        {items.map((_listItem, cardIndex) => {
+          return (
+            <Card
+              key={items[cardIndex].cardId}
+              listIndex={listIndex}
+              cardIndex={cardIndex}
+            ></Card>
+          );
+        })}
+      </section>
     </div>
   );
 };
