@@ -39,10 +39,18 @@ moveItem(direction)
   };
 
   const moveItem = (columnId, itemId, targetColumnId) => {
+    let safeTargetColumnId = targetColumnId;
+    // handle wrapping cards off the edges of the board
+    if (safeTargetColumnId < 0) {
+      safeTargetColumnId = data.length - 1;
+    }
+    if (safeTargetColumnId > data.length - 1) {
+      safeTargetColumnId = 0;
+    }
     const newData = [...data];
     const itemToMove = newData[columnId].listContents[itemId];
     newData[columnId].listContents.splice(itemId, 1);
-    newData[targetColumnId].listContents.push(itemToMove);
+    newData[safeTargetColumnId].listContents.push(itemToMove);
     setData(newData);
   };
 

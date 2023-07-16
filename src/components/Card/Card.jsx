@@ -33,15 +33,13 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
           <FontAwesomeIcon icon={faXmark} />
         </button>
 
-        <div className="icon-bar">
-          <button
-            onClick={() => {
-              moveItem(listIndex, cardIndex, listIndex + 1);
-            }}
-          >
-            <FontAwesomeIcon icon={faArrowRight} />
-          </button>
-        </div>
+        <button
+          onClick={() => {
+            moveItem(listIndex, cardIndex, listIndex + 1);
+          }}
+        >
+          <FontAwesomeIcon icon={faArrowRight} />
+        </button>
       </div>
     </div>
   );
