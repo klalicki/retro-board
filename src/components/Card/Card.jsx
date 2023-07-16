@@ -38,6 +38,14 @@ const Card = ({ listIndex, children, cardIndex }) => {
               rows={1}
               cols={1}
               value={newText}
+              onKeyDown={(e) => {
+                const modifiers = e.shiftKey || e.altKey || e.ctrlKey;
+                if (e.key === "Enter" && !modifiers) {
+                  e.preventDefault();
+                  setItemText(listIndex, cardIndex, newText);
+                  setIsEditing(false);
+                }
+              }}
               onFocus={(e) => {
                 e.target.style.height = e.target.scrollHeight + "px";
               }}
