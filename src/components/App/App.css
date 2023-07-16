@@ -28,4 +28,8 @@
 
 .card-header {
   display: flex;
+  justify-content: space-between;
+}
+.card-header textarea {
+  flex-grow: 1;
 }

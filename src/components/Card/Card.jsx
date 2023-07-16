@@ -28,15 +28,15 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
                 setNewText(e.target.value);
               }}
             ></textarea>
-     
-            <button type="submit">
-              <FontAwesomeIcon
-                icon={faCheck}
-                onClick={() => {
-                  setItemText(listIndex, cardIndex, newText);
-                  setIsEditing(false);
-                }}
-              />
+
+            <button
+              type="submit"
+              onClick={() => {
+                setItemText(listIndex, cardIndex, newText);
+                setIsEditing(false);
+              }}
+            >
+              <FontAwesomeIcon icon={faCheck} />
             </button>
           </>
         ) : (
