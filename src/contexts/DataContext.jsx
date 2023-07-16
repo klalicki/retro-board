@@ -11,17 +11,17 @@ removeItem(item)
 moveItem(direction)
 
 */
-  const addItem = (text, column) => {
+  const addItem = (column) => {
     // generate a unique ID for the item to make it easier to find
     const itemId = Date.now();
     const newItem = {
       itemId: itemId,
-      itemText: text,
+      itemText: "text",
       itemUpvoteCount: 0,
       itemDownvoteCount: 0,
     };
-    const newData = data;
-    newData[column].push(newItem);
+    const newData = [...data];
+    newData[column].listContents.push(newItem);
     setData(newData);
   };
 

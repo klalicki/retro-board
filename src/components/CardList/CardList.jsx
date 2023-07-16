@@ -5,14 +5,18 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 const CardList = ({ listIndex }) => {
-  const { data } = useContext(DataContext);
+  const { data, addItem } = useContext(DataContext);
   const items = data[listIndex].listContents;
 
   return (
     <div className="card-list">
       <article className="card-list-header">
         <h1>CardList {listIndex}:</h1>
-        <button>
+        <button
+          onClick={() => {
+            addItem(listIndex);
+          }}
+        >
           <FontAwesomeIcon icon={faPlus} />
         </button>
       </article>
