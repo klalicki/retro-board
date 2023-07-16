@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import { useState } from "react";
+import { useRef } from "react";
 import {
   faArrowRight,
   faXmark,
   faArrowLeft,
   faPen,
   faCheck,
-  faL,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ listIndex, cardText, children, cardIndex }) => {
@@ -19,19 +19,21 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
   const [newText, setNewText] = useState(cardData.itemText);
   return (
     <div className="card">
-      <div className="card-header">
+      <form className="card-header">
         {isEditing ? (
           <>
-            <textarea
+            <input
+              autoFocus
               value={newText}
               onChange={(e) => {
                 setNewText(e.target.value);
               }}
-            ></textarea>
+            ></input>
 
             <button
               type="submit"
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 setItemText(listIndex, cardIndex, newText);
                 setIsEditing(false);
               }}
@@ -43,7 +45,9 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
           <>
             <h2>{cardData.itemText}</h2>
             <button
-              onClick={() => {
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
                 setIsEditing(true);
               }}
             >
@@ -51,7 +55,7 @@ const Card = ({ listIndex, cardText, children, cardIndex }) => {
             </button>
           </>
         )}
-      </div>
+      </form>
 
       {children}
       <div className="icon-bar">
