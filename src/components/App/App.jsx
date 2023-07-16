@@ -5,7 +5,6 @@ import { DataProvider } from "../../contexts/DataContext";
 // components
 import CardList from "../CardList/CardList";
 function App() {
-  console.log(sampleData);
   return (
     <div className="App">
       <div className="card-list-container">

@@ -18,7 +18,13 @@ const CardList = ({ listIndex }) => {
       </article>
 
       {items.map((listItem, cardIndex) => {
-        return <Card listIndex={listIndex} cardIndex={cardIndex}></Card>;
+        return (
+          <Card
+            key={items[cardIndex].cardId}
+            listIndex={listIndex}
+            cardIndex={cardIndex}
+          ></Card>
+        );
       })}
     </div>
   );
