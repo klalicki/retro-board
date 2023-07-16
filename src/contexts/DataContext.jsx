@@ -74,7 +74,7 @@ export const DataProvider = ({ children }) => {
   const incrementDownvote = (columnIndex, itemIndex) => {
     const newData = [...data];
     // console.log(newData);
-    newData[columnIndex].listContents[itemIndex].itemUpvoteCount++;
+    newData[columnIndex].listContents[itemIndex].itemDownvoteCount++;
     setData(newData);
   };
   return (
