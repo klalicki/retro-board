@@ -7,8 +7,8 @@ import CardList from "../CardList/CardList";
 function App() {
   return (
     <div className="App">
-      <div className="card-list-container">
-        <DataProvider>
+      <DataProvider>
+        <div className="card-list-container">
           {sampleData.map((list, listIndex) => {
             return (
               <CardList
@@ -18,8 +18,8 @@ function App() {
               />
             );
           })}
-        </DataProvider>
-      </div>
+        </div>
+      </DataProvider>
     </div>
   );
 }
