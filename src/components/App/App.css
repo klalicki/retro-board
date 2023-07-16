@@ -30,6 +30,7 @@
   display: flex;
   justify-content: space-between;
 }
-.card-header textarea {
+.card-header input {
   flex-grow: 1;
+  
 }
