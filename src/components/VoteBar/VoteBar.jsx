@@ -7,7 +7,7 @@ import { faThumbsUp, faThumbsDown } from "@fortawesome/free-solid-svg-icons";
 const VoteBar = ({ listIndex, cardIndex }) => {
   const { data, incrementUpvote, incrementDownvote } = useContext(DataContext);
   return (
-    <div>
+    <div className="vote-bar">
       <button
         onClick={() => {
           incrementDownvote(listIndex, cardIndex);
