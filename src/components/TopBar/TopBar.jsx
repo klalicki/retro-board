@@ -19,7 +19,7 @@ const TopBar = ({ children }) => {
             setDarkMode(false);
           }}
         >
-          <FontAwesomeIcon icon={faSun} /> switch to light mode
+          <FontAwesomeIcon icon={faSun} />
         </button>
       ) : (
         <button
@@ -27,7 +27,7 @@ const TopBar = ({ children }) => {
             setDarkMode(true);
           }}
         >
-          <FontAwesomeIcon icon={faMoon} /> switch to dark mode
+          <FontAwesomeIcon icon={faMoon} />
         </button>
       )}
       <button onClick={toggleLayout}>

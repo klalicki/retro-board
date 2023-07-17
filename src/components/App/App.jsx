@@ -6,11 +6,11 @@ import { ModeContextProvider } from "../../contexts/ModeContext";
 // components
 import CardList from "../CardList/CardList";
 import TopBar from "../TopBar/TopBar";
-import ColorThemeWrapper from "../ColorThemeWrapper/ColorThemeWrapper";
+import ModeWrapper from "../ModeWrapper/ModeWrapper";
 function App() {
   return (
     <ModeContextProvider>
-      <ColorThemeWrapper>
+      <ModeWrapper>
         <div className="app">
           <TopBar></TopBar>
           <DataProvider>
@@ -24,7 +24,7 @@ function App() {
           </DataProvider>
           <footer></footer>
         </div>
-      </ColorThemeWrapper>
+      </ModeWrapper>
     </ModeContextProvider>
   );
 }

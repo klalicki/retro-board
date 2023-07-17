@@ -4,17 +4,20 @@ import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import { useState } from "react";
 import VoteBar from "../VoteBar/VoteBar";
+import { ModeContext } from "../../contexts/ModeContext";
 import {
   faArrowRight,
   faXmark,
   faArrowLeft,
+  faArrowUp,
+  faArrowDown,
   faPen,
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ listIndex, children, cardIndex }) => {
   const { data, removeItem, moveItem, setItemText } = useContext(DataContext);
-
+  const { mode } = useContext(ModeContext);
   const cardData = data[listIndex].listContents[cardIndex];
   const [newText, setNewText] = useState(cardData.itemText);
   const [isEditing, setIsEditing] = useState(cardData.itemText === "");
@@ -81,7 +84,11 @@ const Card = ({ listIndex, children, cardIndex }) => {
               moveItem(listIndex, cardIndex, listIndex - 1);
             }}
           >
-            <FontAwesomeIcon icon={faArrowLeft} />
+            {mode.layout === "vertical" ? (
+              <FontAwesomeIcon icon={faArrowLeft} />
+            ) : (
+              <FontAwesomeIcon icon={faArrowUp} />
+            )}
           </button>
 
           <button
@@ -97,7 +104,11 @@ const Card = ({ listIndex, children, cardIndex }) => {
               moveItem(listIndex, cardIndex, listIndex + 1);
             }}
           >
-            <FontAwesomeIcon icon={faArrowRight} />
+            {mode.layout === "vertical" ? (
+              <FontAwesomeIcon icon={faArrowRight} />
+            ) : (
+              <FontAwesomeIcon icon={faArrowDown} />
+            )}
           </button>
         </div>
       </div>

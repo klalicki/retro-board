@@ -77,6 +77,16 @@ export const DataProvider = ({ children }) => {
     newData[columnIndex].listContents[itemIndex].itemDownvoteCount++;
     setData(newData);
   };
+
+  const saveToLocalStorage = () => {
+    const dataToSave = JSON.stringify(data);
+    window.localStorage.setItem("retro-data", dataToSave);
+  };
+  const loadFromLocalStorage = () => {
+    const strData = window.localStorage.getItem("retro-data");
+    const objData = JSON.parse(strData);
+    setData(objData);
+  };
   return (
     <DataContext.Provider
       value={{
@@ -87,6 +97,8 @@ export const DataProvider = ({ children }) => {
         setItemText,
         incrementUpvote,
         incrementDownvote,
+        saveToLocalStorage,
+        loadFromLocalStorage,
       }}
     >
       {children}
