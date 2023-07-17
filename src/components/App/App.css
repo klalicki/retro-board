@@ -75,6 +75,9 @@ button:hover {
   background-color: white;
   color: var(--accent-color);
 }
+.card-list-header button:focus {
+  outline-color: white;
+}
 .card {
   background-color: white;
   padding: 0.75rem;
