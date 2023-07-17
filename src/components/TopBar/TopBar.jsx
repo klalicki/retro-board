@@ -5,8 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSun,
   faMoon,
-  faObjectsAlignTop,
-  faObjectsAlignLeft,
+  faChartSimple,
 } from "@fortawesome/free-solid-svg-icons";
 
 const TopBar = ({ children }) => {
@@ -31,6 +30,14 @@ const TopBar = ({ children }) => {
           <FontAwesomeIcon icon={faMoon} /> switch to dark mode
         </button>
       )}
+      <button onClick={toggleLayout}>
+        {mode.layout === "horizontal" ? (
+          <FontAwesomeIcon icon={faChartSimple} rotation={180} />
+        ) : (
+          <FontAwesomeIcon icon={faChartSimple} rotation={90} />
+        )}{" "}
+        switch layout
+      </button>
     </header>
   );
 };
