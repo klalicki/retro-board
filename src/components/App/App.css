@@ -163,6 +163,9 @@ button:hover {
   gap: 0.25rem;
   color: var(--fg-color);
 }
+.vote-bar button:hover {
+  color: var(--bg-color);
+}
 
 .header {
   display: flex;
