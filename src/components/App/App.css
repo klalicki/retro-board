@@ -1,32 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
 
+:root {
+  --accent-color: black;
+  --bg-color: white;
+  --list-header-text-color: white;
+  --card-text-color: black;
+  --fg-color: black;
+  --focus-ring-color: blue;
+  --col-color: #eee;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Space Grotesk", Helvetica, sans-serif;
 }
-:root {
-  --accent-color: black;
-}
-
 *:focus {
-  outline: 6px solid blue;
+  outline: 6px solid var(--focus-ring-color);
 }
 .card-list {
   display: flex;
-  flex-direction: column;
-  background-color: #eee;
-  border-radius: 0.5rem 0.5rem 0 0;
-  width: 400px;
+  background-color: var(--col-color);
+  /* border-radius: 0.5rem 0.5rem 0 0; */
   flex-shrink: 1;
+}
+.mode-horizontal .card-list {
+  flex-direction: row;
+}
+.mode-vertical .card-list {
+  flex-direction: column;
 }
 .card-list-body {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
   padding: 1rem;
 }
+.mode-horizontal .card-list-body {
+  flex-direction: row;
+}
+.mode-vertical .card-list-body {
+  flex-direction: column;
+}
 button {
-  background-color: white;
+  background-color: var(--bg-color);
   font-size: 1rem;
   padding: 0.5rem;
   border: 2px solid var(--accent-color);
@@ -36,56 +51,77 @@ button {
 }
 button:hover {
   background-color: var(--accent-color);
-  color: white;
+  color: var(--bg-color);
   transition: all 0.1s;
 }
 .app {
+  background-color: var(--bg-color);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100vw;
   min-height: 100vh;
 }
 .card-list-container {
-  width: auto;
+  width: 100vw;
   display: flex;
-  flex-wrap: wrap;
-  /* justify-content: center; */
+  /* flex-direction: row; */
+  justify-content: center;
   align-items: flex-start;
   gap: 2rem;
   padding: 1rem;
 }
+.mode-horizontal .card-list-container {
+  flex-direction: column;
+}
+.mode-vertical .card-list-container {
+  flex-direction: row;
+}
 .card-list-header {
   background-color: var(--accent-color);
+
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  border-radius: 0.5rem 0.5rem 0 0;
+  /* border-radius: 0.5rem 0.5rem 0 0; */
 }
+.mode-horizontal .card-list-header {
+  width: 200px;
+}
+
 .card-list-header h1 {
   margin-top: 0;
-  color: white;
+  color: var(--list-header-text-color);
 }
 .card-list-header button {
   background-color: var(--accent-color);
-  color: white;
-  border: 2px solid white;
+  color: var(--list-header-text-color);
+  border: 2px solid var(--list-header-text-color);
 }
 .card-list-header button:hover {
-  background-color: white;
+  background-color: var(--list-header-text-color);
   color: var(--accent-color);
 }
 .card-list-header button:focus {
-  outline-color: white;
+  outline-color: var(--bg-color);
 }
 .card {
-  background-color: white;
+  background-color: var(--bg-color);
   padding: 0.75rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
+  width: 300px;
   border-radius: 0.5rem;
+
+  flex-grow: 1;
   filter: drop-shadow(0px 5px 4px #00000040);
+}
+.card-bottom-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .icon-bar {
   display: flex;
@@ -100,14 +136,17 @@ button:hover {
 }
 .card-header h2,
 .card-header textarea {
-  color: var(--accent-color);
+  color: var(--card-text-color);
   margin: 0;
   font-size: 1.5rem;
   font-weight: 100;
   width: auto;
+  overflow-wrap: break-word;
+
   flex-grow: 1;
 }
 .card-header textarea {
+  background-color: var(--bg-color);
   padding: 0;
   border: none;
   outline: none;
@@ -121,4 +160,25 @@ button:hover {
 .vote-bar button {
   display: flex;
   gap: 0.25rem;
+  color: var(--fg-color);
+}
+
+.header {
+  display: flex;
+  gap: 1rem;
+  width: 100vw;
+  min-height: 3rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--fg-color);
+  background-color: var(--col-color);
+}
+.header button {
+  color: var(--fg-color);
+  background-color: var(--bg-color);
+  border-color: var(--fg-color);
+}
+.header button:hover {
+  background-color: var(--fg-color);
+  color: var(--bg-color);
 }

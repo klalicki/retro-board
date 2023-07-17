@@ -1,8 +1,19 @@
-# Getting Started with Create React App
+# React Retro Board
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About the Project
 
-## Available Scripts
+This project is a kanban board, set up for use in an Agile retro. It currently has the following features:
+
+- Add/remove cards from columns
+- Edit text on cards
+- Move cards between columns
+- Upvote/downvote counters on each card.
+
+## Tech
+
+This project is built with React, using the Context API for state lifting and management.
+
+## How to 
 
 In the project directory, you can run:
 

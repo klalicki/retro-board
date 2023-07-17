@@ -73,31 +73,33 @@ const Card = ({ listIndex, children, cardIndex }) => {
       </form>
 
       {children}
-      <VoteBar {...{ listIndex, cardIndex }} />
-      <div className="icon-bar">
-        <button
-          onClick={() => {
-            moveItem(listIndex, cardIndex, listIndex - 1);
-          }}
-        >
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </button>
+      <div className="card-bottom-section">
+        <VoteBar {...{ listIndex, cardIndex }} />
+        <div className="icon-bar">
+          <button
+            onClick={() => {
+              moveItem(listIndex, cardIndex, listIndex - 1);
+            }}
+          >
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </button>
 
-        <button
-          onClick={() => {
-            removeItem(listIndex, cardIndex);
-          }}
-        >
-          <FontAwesomeIcon icon={faXmark} />
-        </button>
+          <button
+            onClick={() => {
+              removeItem(listIndex, cardIndex);
+            }}
+          >
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
 
-        <button
-          onClick={() => {
-            moveItem(listIndex, cardIndex, listIndex + 1);
-          }}
-        >
-          <FontAwesomeIcon icon={faArrowRight} />
-        </button>
+          <button
+            onClick={() => {
+              moveItem(listIndex, cardIndex, listIndex + 1);
+            }}
+          >
+            <FontAwesomeIcon icon={faArrowRight} />
+          </button>
+        </div>
       </div>
     </article>
   );
