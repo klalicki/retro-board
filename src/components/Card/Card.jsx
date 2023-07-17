@@ -19,7 +19,7 @@ const Card = ({ listIndex, children, cardIndex }) => {
   const [newText, setNewText] = useState(cardData.itemText);
   const [isEditing, setIsEditing] = useState(cardData.itemText === "");
   return (
-    <div className="card">
+    <article className="card">
       <form
         className="card-header"
         onSubmit={(e) => {
@@ -99,7 +99,7 @@ const Card = ({ listIndex, children, cardIndex }) => {
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
       </div>
-    </div>
+    </article>
   );
 };
 export default Card;
