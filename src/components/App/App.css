@@ -20,8 +20,9 @@
 .card-list {
   display: flex;
   background-color: var(--col-color);
-  /* border-radius: 0.5rem 0.5rem 0 0; */
+  border-radius: 0.5rem;
   flex-shrink: 1;
+  overflow: hidden;
 }
 .mode-horizontal .card-list {
   flex-direction: row;
