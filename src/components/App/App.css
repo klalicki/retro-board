@@ -47,10 +47,11 @@ button:hover {
   min-height: 100vh;
 }
 .card-list-container {
-  width: auto;
+  width: 100vw;
   display: flex;
-  flex-wrap: wrap;
-  /* justify-content: center; */
+  /* overflow-x: scroll; */
+  /* flex-wrap: wrap; */
+  justify-content: center;
   align-items: flex-start;
   gap: 2rem;
   padding: 1rem;
