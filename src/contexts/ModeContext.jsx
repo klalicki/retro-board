@@ -23,7 +23,7 @@ const colorThemes = {
 };
 
 export const ModeContextProvider = ({ children }) => {
-  const [mode, setMode] = useState({ layout: "horizontal", darkMode: false });
+  const [mode, setMode] = useState({ layout: "vertical", darkMode: false });
 
   const toggleLayout = () => {
     const newLayout = mode.layout === "horizontal" ? "vertical" : "horizontal";
