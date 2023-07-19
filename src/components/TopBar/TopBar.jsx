@@ -42,6 +42,7 @@ const TopBar = ({ children }) => {
         )}{" "}
         switch layout
       </button>
+    
       <button
         onClick={() => {
           saveToLocalStorage();
