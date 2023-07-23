@@ -6,9 +6,9 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const [data, setData] = useState(sampleData);
 
-  const addColumn = (columnText) => {
-    // add a column to the data model
-  };
+  // const addColumn = (columnText) => {
+  //   // add a column to the data model
+  // };
   /**
    * The `addItem` function adds a new card to the end of a specific column.
    * @param columnIndex: the id of the column to add a card to
