@@ -12,8 +12,9 @@ function App() {
     <ModeContextProvider>
       <ModeWrapper>
         <div className="app">
-          <TopBar></TopBar>
           <DataProvider>
+            <TopBar></TopBar>
+
             <div className="card-list-container">
               {sampleData.map((list, listIndex) => {
                 return (

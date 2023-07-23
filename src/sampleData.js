@@ -5,7 +5,7 @@ export const sampleData = [
     listColor: "seagreen",
     listContents: [
       {
-        itemText: "I coded my first React component",
+        itemText: "This is a sample card.",
         itemId: 0,
         itemUpvoteCount: 0,
         itemDownvoteCount: 0,
@@ -18,14 +18,8 @@ export const sampleData = [
     listColor: "tomato",
     listContents: [
       {
-        itemText: "Life",
+        itemText: "This is another card.",
         itemId: 1,
-        itemUpvoteCount: 0,
-        itemDownvoteCount: 0,
-      },
-      {
-        itemText: "Thinking more positively",
-        itemId: 2,
         itemUpvoteCount: 0,
         itemDownvoteCount: 0,
       },
@@ -35,13 +29,6 @@ export const sampleData = [
     listName: "Action Items",
     listColor: "purple",
     listId: 2,
-    listContents: [
-      {
-        itemText: "Completing this",
-        itemId: 3,
-        itemUpvoteCount: 0,
-        itemDownvoteCount: 0,
-      },
-    ],
+    listContents: [],
   },
 ];
