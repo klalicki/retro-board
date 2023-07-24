@@ -9,7 +9,9 @@
   --focus-ring-color: blue;
   --col-color: #eee;
 }
-
+.sr-hidden {
+  text-decoration: line-through;
+}
 * {
   box-sizing: border-box;
   font-family: "Space Grotesk", Helvetica, sans-serif;

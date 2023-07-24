@@ -14,13 +14,19 @@ const CardList = ({ listIndex }) => {
       style={{ "--accent-color": data[listIndex].listColor }}
     >
       <article className="card-list-header">
-        <h1>{data[listIndex].listName}</h1>
+        <h1>
+          <span className="sr-hidden">category:</span>
+          {data[listIndex].listName}
+        </h1>
         <button
           onClick={() => {
             addItem(listIndex);
           }}
         >
           <FontAwesomeIcon icon={faPlus} />
+          <span className="sr-hidden">
+            Add blank card to category "{data[listIndex].listName}"
+          </span>
         </button>
       </article>
       <section className="card-list-body">
