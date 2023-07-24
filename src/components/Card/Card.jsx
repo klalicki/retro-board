@@ -63,6 +63,7 @@ const Card = ({ listIndex, children, cardIndex }) => {
 
             <button type="submit">
               <FontAwesomeIcon icon={faCheck} />
+              <span className="sr-hidden">Save new card text</span>
             </button>
           </>
         ) : (
