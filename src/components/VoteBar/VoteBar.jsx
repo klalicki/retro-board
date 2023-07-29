@@ -14,10 +14,7 @@ const VoteBar = ({ listIndex, cardIndex }) => {
         }}
       >
         <FontAwesomeIcon icon={faThumbsDown} />{" "}
-        <span className="sr-hidden">
-          Downvote card "{data[listIndex].listContents[cardIndex].itemText}." It
-          currently has
-        </span>
+        <span className="sr-hidden">Downvote card. It currently has</span>
         {data[listIndex].listContents[cardIndex].itemDownvoteCount}
         <span className="sr-hidden"> downvotes.</span>
       </button>
@@ -27,10 +24,7 @@ const VoteBar = ({ listIndex, cardIndex }) => {
         }}
       >
         <FontAwesomeIcon icon={faThumbsUp} />
-        <span className="sr-hidden">
-          Upvote card "{data[listIndex].listContents[cardIndex].itemText}." It
-          currently has
-        </span>
+        <span className="sr-hidden">Upvote card. It currently has</span>
         {data[listIndex].listContents[cardIndex].itemUpvoteCount}
         <span className="sr-hidden"> upvotes.</span>
       </button>
