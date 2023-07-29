@@ -15,7 +15,7 @@ const CardList = ({ listIndex }) => {
     >
       <article className="card-list-header">
         <h1>
-          <span className="sr-hidden">category:</span>
+          <span className="sr-hidden">category: </span>
           {data[listIndex].listName}
         </h1>
         <button
