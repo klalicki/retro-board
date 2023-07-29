@@ -11,6 +11,7 @@
 }
 .sr-hidden {
   text-decoration: line-through;
+  /* font-size: 75%; */
 }
 * {
   box-sizing: border-box;
