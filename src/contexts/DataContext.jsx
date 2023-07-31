@@ -62,21 +62,18 @@ export const DataProvider = ({ children }) => {
 
   const setItemText = (columnIndex, itemIndex, newText) => {
     const newData = [...data];
-    // console.log(newData);
     newData[columnIndex].listContents[itemIndex].itemText = newText;
     setData(newData);
   };
 
   const incrementUpvote = (columnIndex, itemIndex) => {
     const newData = [...data];
-    // console.log(newData);
     newData[columnIndex].listContents[itemIndex].itemUpvoteCount++;
     setData(newData);
   };
 
   const incrementDownvote = (columnIndex, itemIndex) => {
     const newData = [...data];
-    // console.log(newData);
     newData[columnIndex].listContents[itemIndex].itemDownvoteCount++;
     setData(newData);
   };
