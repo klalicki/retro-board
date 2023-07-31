@@ -63,6 +63,7 @@ const Card = ({ listIndex, children, cardIndex }) => {
 
             <button type="submit">
               <FontAwesomeIcon icon={faCheck} />
+              <span className="sr-hidden">Save new card text</span>
             </button>
           </>
         ) : (
@@ -70,6 +71,7 @@ const Card = ({ listIndex, children, cardIndex }) => {
             <h2>{cardData.itemText}</h2>
             <button type="submit">
               <FontAwesomeIcon icon={faPen} />
+              <span className="sr-hidden">Edit card</span>
             </button>
           </>
         )}
@@ -89,6 +91,7 @@ const Card = ({ listIndex, children, cardIndex }) => {
             ) : (
               <FontAwesomeIcon icon={faArrowUp} />
             )}
+            <span className="sr-hidden">Move card to previous category.</span>
           </button>
 
           <button
@@ -97,6 +100,7 @@ const Card = ({ listIndex, children, cardIndex }) => {
             }}
           >
             <FontAwesomeIcon icon={faXmark} />
+            <span className="sr-hidden">Delete card</span>
           </button>
 
           <button
@@ -109,6 +113,7 @@ const Card = ({ listIndex, children, cardIndex }) => {
             ) : (
               <FontAwesomeIcon icon={faArrowDown} />
             )}
+            <span className="sr-hidden">Move card to next category.</span>
           </button>
         </div>
       </div>

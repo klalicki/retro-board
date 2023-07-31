@@ -9,7 +9,13 @@
   --focus-ring-color: blue;
   --col-color: #eee;
 }
-
+.sr-hidden {
+  /* text-decoration: line-through; */
+  /* font-size: 75%; */
+  position: absolute;
+  opacity: 0;
+  left: -1000vw;
+}
 * {
   box-sizing: border-box;
   font-family: "Space Grotesk", Helvetica, sans-serif;
@@ -21,7 +27,8 @@
   display: flex;
   background-color: var(--col-color);
   border-radius: 0.5rem;
-  flex-shrink: 1;
+  /* flex-shrink: 2; */
+  min-width: calc(300px + 2rem);
   overflow: hidden;
 }
 .mode-horizontal .card-list {
@@ -115,8 +122,8 @@ button:hover {
   gap: 1rem;
   width: 300px;
   border-radius: 0.5rem;
-
-  flex-grow: 1;
+  /* flex-shrink: 1; */
+  /* flex-grow: 1; */
   filter: drop-shadow(0px 5px 4px #00000040);
 }
 .card-bottom-section {
@@ -142,6 +149,7 @@ button:hover {
   font-size: 1.5rem;
   font-weight: 100;
   width: auto;
+  max-width: calc(300px - 4rem);
   overflow-wrap: break-word;
 
   flex-grow: 1;
