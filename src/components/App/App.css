@@ -28,7 +28,7 @@
   background-color: var(--col-color);
   border-radius: 0.5rem;
   /* flex-shrink: 2; */
-  min-width: calc(300px + 2rem);
+  /* min-width: calc(300px + 2rem); */
   overflow: hidden;
 }
 .mode-horizontal .card-list {
@@ -73,11 +73,10 @@ button:hover {
 .card-list-container {
   width: 100vw;
   display: flex;
-  /* flex-direction: row; */
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 1rem;
+  /* flex-direction: row; */
 }
 .mode-horizontal .card-list-container {
   flex-direction: column;
